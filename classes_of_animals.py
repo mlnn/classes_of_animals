@@ -1,109 +1,68 @@
 class Animal:
-    legs = 0
-    wings = False
-    sounds = ''
+    def __init__(self, type, name):
+        self.type = type
+        self.name = name
 
-    def born(self):
-        print('Оно родилось')
-
-    def death(self):
-        print('Оно умерло')
-
-    def leg(self, add_leg):
-        self.legs = self.legs + add_leg
-
-    def wing(self, add_wing):
-        self.wings = add_wing
-
-    def sound(self, add_sound):
-        self.sounds = add_sound
-
-    def info(self):
-        if self.wings:
-            print('У этого животного есть крылья, {} ноги и оно издает звук "{}"'.format(self.legs, self.sounds))
-        else:
-            print('У этого животного {} ноги и оно издает звук "{}"'.format(self.legs, self.sounds))
+    def pname(self):
+        print('Это - {}, имя животного - {}'.format(self.type, self.name))
 
 
-class Cow(Animal):
+class Mammal(Animal):
+    def __init__(self, name):
+        super().__init__('Млекопитающее', name)
+
+
+class Bird(Animal):
+    def __init__(self, name):
+        super().__init__('Птица', name)
+
+
+class Cow(Mammal):
     def __init__(self):
-        super().sound('Муу')
-        super().leg(4)
-        super().wing(False)
+        super().__init__('Зина')
 
 
-class Goat(Animal):
+class Goat(Mammal):
     def __init__(self):
-        super().sound('Мее')
-        super().leg(4)
-        super().wing(False)
+        super().__init__('Машка')
 
 
-class Sheep(Animal):
+class Sheep(Mammal):
     def __init__(self):
-        super().sound('Бее')
-        super().leg(4)
-        super().wing(False)
+        super().__init__('Рита')
 
 
-class Pig(Animal):
+class Pig(Mammal):
     def __init__(self):
-        super().sound('Хрю')
-        super().leg(4)
-        super().wing(False)
+        super().__init__('Борис')
 
 
-class Duck(Animal):
+class Duck(Bird):
     def __init__(self):
-        super().sound('Кря')
-        super().leg(2)
-        super().wing(True)
+        super().__init__('Кира')
 
 
-class Chicken(Animal):
+class Chicken(Bird):
     def __init__(self):
-        super().sound('Ко-ко-ко')
-        super().leg(2)
-        super().wing(True)
+        super().__init__('Глаша')
 
 
-class Goose(Animal):
+class Goose(Bird):
     def __init__(self):
-        super().sound('Куа')
-        super().leg(2)
-        super().wing(True)
+        super().__init__('Ганс')
 
 cow = Cow()
-cow.born()
-cow.info()
-cow.death()
-
 goat = Goat()
-goat.born()
-goat.info()
-goat.death()
-
 sheep = Sheep()
-sheep.born()
-sheep.info()
-sheep.death()
-
 pig = Pig()
-pig.born()
-pig.info()
-pig.death()
-
 duck = Duck()
-duck.born()
-duck.info()
-duck.death()
-
 chicken = Chicken()
-chicken.born()
-chicken.info()
-chicken.death()
-
 goose = Goose()
-goose.born()
-goose.info()
-goose.death()
+
+cow.pname()
+goat.pname()
+sheep.pname()
+pig.pname()
+duck.pname()
+chicken.pname()
+goose.pname()
