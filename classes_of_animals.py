@@ -1,68 +1,31 @@
-class Animal:
-    def __init__(self, type, name):
-        self.type = type
-        self.name = name
-
-    def pname(self):
-        print('Это - {}, имя животного - {}'.format(self.type, self.name))
+class Animal(object):
+  name = ''
 
 
 class Mammal(Animal):
-    def __init__(self, name):
-        super().__init__('Млекопитающее', name)
+  type = 'Млекопитающее'
+  def __init__(self, name):
+    self.name = name
 
 
 class Bird(Animal):
-    def __init__(self, name):
-        super().__init__('Птица', name)
+  type = 'Птица'
+  def __init__(self, name):
+    self.name = name
 
 
-class Cow(Mammal):
-    def __init__(self):
-        super().__init__('Зина')
+cow = Mammal(name='Зина')
+goat = Mammal(name='Машка')
+sheep = Mammal(name='Рита')
+pig = Mammal(name='Борис')
+duck = Bird(name='Кира')
+chicken = Bird(name='Глаша')
+goose = Bird(name='Ганс')
 
-
-class Goat(Mammal):
-    def __init__(self):
-        super().__init__('Машка')
-
-
-class Sheep(Mammal):
-    def __init__(self):
-        super().__init__('Рита')
-
-
-class Pig(Mammal):
-    def __init__(self):
-        super().__init__('Борис')
-
-
-class Duck(Bird):
-    def __init__(self):
-        super().__init__('Кира')
-
-
-class Chicken(Bird):
-    def __init__(self):
-        super().__init__('Глаша')
-
-
-class Goose(Bird):
-    def __init__(self):
-        super().__init__('Ганс')
-
-cow = Cow()
-goat = Goat()
-sheep = Sheep()
-pig = Pig()
-duck = Duck()
-chicken = Chicken()
-goose = Goose()
-
-cow.pname()
-goat.pname()
-sheep.pname()
-pig.pname()
-duck.pname()
-chicken.pname()
-goose.pname()
+print(cow.type, cow.name)
+print(goat.type, goat.name)
+print(sheep.type, sheep.name)
+print(pig.type, pig.name)
+print(duck.type, duck.name)
+print(chicken.type, chicken.name)
+print(goose.type, goose.name)
